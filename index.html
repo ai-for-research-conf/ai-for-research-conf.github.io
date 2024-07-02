@@ -1,191 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI For Research Conference</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-        }
-        header {
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            color: white;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #a777e3 3px solid;
-        }
-        header a {
-            color: #ffffff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            overflow: hidden;
-        }
-        header li {
-            float: left;
-            display: block;
-            padding: 0 20px 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        header .highlight, header .current a {
-            color: #e8491d;
-            font-weight: bold;
-        }
-        header a:hover {
-            color: #ffffff;
-            font-weight: bold;
-        }
-        .btn {
-            display: inline-block;
-            background: #e8491d;
-            color: #ffffff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 18px;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: #ff6a3c;
-        }
-        #showcase {
-            min-height: 400px;
-            background: url('/api/placeholder/1200/400') no-repeat center center/cover;
-            text-align: center;
-            color: #ffffff;
-        }
-        #showcase h1 {
-            margin-top: 100px;
-            font-size: 55px;
-            margin-bottom: 10px;
-        }
-        #showcase p {
-            font-size: 20px;
-        }
-        .speaker {
-            background: #f4f4f4;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-        .speaker img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            float: left;
-            margin-right: 20px;
-        }
-        .claim {
-            background: #e8491d;
-            color: #ffffff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
+      body {
+        font-family: "Futura", sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+        padding: 20px;
+      }
+      header {
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        color: white;
+        padding-top: 30px;
+        min-height: 70px;
+        border-bottom: #a777e3 3px solid;
+      }
+      header a {
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+      header ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        overflow: hidden;
+      }
+      header li {
+        float: left;
+        display: block;
+        padding: 0 20px 0 20px;
+      }
+      header #branding {
+        float: left;
+      }
+      header #branding h1 {
+        margin: 0;
+      }
+      header nav {
+        float: right;
+        margin-top: 10px;
+      }
+      header .highlight,
+      header .current a {
+        color: #e8491d;
+        font-weight: bold;
+      }
+      header a:hover {
+        color: #ffffff;
+        font-weight: bold;
+      }
+      .btn {
+        display: inline-block;
+        background: #e8491d;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+      .btn:hover {
+        background: #ff6a3c;
+      }
+      #showcase {
+        min-height: 400px;
+        background: url("header.webp") no-repeat center center/cover;
+        text-align: center;
+        color: #e8491d;
+      }
+      #showcase h1 {
+        margin-top: 100px;
+        font-size: 55px;
+        margin-bottom: 10px;
+      }
+      #showcase p {
+        font-size: 20px;
+      }
+      .speaker {
+        background: #f4f4f4;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
+      .speaker img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        float: left;
+        margin-right: 20px;
+      }
+      .claim {
+        background: #e8491d;
+        color: #ffffff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">AI</span> For Research</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li class="current"><a href="#home">Home</a></li>
-                    <li><a href="#speakers">Speakers</a></li>
-                    <li><a href="#claims">AI Power</a></li>
-                    <li><a href="#register" class="btn">Register Now</a></li>
-                </ul>
-            </nav>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">AI</span> For Research</h1>
         </div>
+        <nav>
+          <ul>
+            <li class="current"><a href="#home">Home</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#claims">AI Power</a></li>
+            <li><a href="#register" class="btn">Register Now</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <section id="home">
-        <div id="showcase">
-            <div class="container">
-                <h1>AI For Research Conference</h1>
-                <p>Join us on July 18th, 2024 at Tiger Team Ventures for a day of talks and workshops</p>
-                <a href="#register" class="btn">Register Now</a>
-            </div>
+      <div id="showcase">
+        <div class="container">
+          <h1>AI For Research Conference</h1>
+          <p>
+            Join us on July 18th, 2024 at Tiger Team Ventures for a day of talks
+            and workshops
+          </p>
+          <a href="#register" class="btn">Register Now</a>
         </div>
+      </div>
     </section>
 
     <section id="speakers">
-        <div class="container">
-            <h2>Speaker Line-up</h2>
-            <div class="speaker">
-                <img src="/api/placeholder/100/100" alt="Jane Doe">
-                <h3>Jane Doe</h3>
-                <p>AI Ethics Researcher</p>
-            </div>
-            <div class="speaker">
-                <img src="/api/placeholder/100/100" alt="John Smith">
-                <h3>John Smith</h3>
-                <p>Machine Learning Engineer</p>
-            </div>
-            <div class="speaker">
-                <img src="/api/placeholder/100/100" alt="Emily Brown">
-                <h3>Emily Brown</h3>
-                <p>Data Scientist</p>
-            </div>
+      <div class="container">
+        <h2>Speaker Line-up</h2>
+        <div class="speaker">
+          <img src="images/profile4.jpeg" alt="" />
+          <h3>Dr. Gary Marlow</h3>
+          <p>AI Ethics Researcher</p>
         </div>
+        <div class="speaker">
+          <img src="images/profile5.jpeg" alt="Josephine Smith" />
+          <h3>Josephine Smith</h3>
+          <p>Machine Learning Engineer</p>
+        </div>
+        <div class="speaker">
+          <img src="images/profile6.jpeg" alt="Emily Brown" />
+          <h3>Emily Brown</h3>
+          <p>Data Scientist</p>
+        </div>
+      </div>
     </section>
 
     <section id="claims">
-        <div class="container">
-            <h2>The Power of AI</h2>
-            <div class="claim">
-                <h3>Revolutionizing Research</h3>
-                <p>AI is transforming how we conduct research, enabling faster discoveries and deeper insights.</p>
-            </div>
-            <div class="claim">
-                <h3>Enhancing Productivity</h3>
-                <p>AI-powered tools are boosting researcher productivity, automating tedious tasks and freeing up time for creative thinking.</p>
-            </div>
-            <div class="claim">
-                <h3>Unlocking New Possibilities</h3>
-                <p>AI is opening doors to research areas previously thought impossible, pushing the boundaries of human knowledge.</p>
-            </div>
+      <div class="container">
+        <h2>The Power of AI</h2>
+        <div class="claim">
+          <h3>Revolutionizing Research</h3>
+          <p>
+            AI is transforming how we conduct research, enabling faster
+            discoveries and deeper insights.
+          </p>
         </div>
+        <div class="claim">
+          <h3>Enhancing Productivity</h3>
+          <p>
+            AI-powered tools are boosting researcher productivity, automating
+            tedious tasks and freeing up time for creative thinking.
+          </p>
+        </div>
+        <div class="claim">
+          <h3>Unlocking New Possibilities</h3>
+          <p>
+            AI is opening doors to research areas previously thought impossible,
+            pushing the boundaries of human knowledge.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="register">
-        <div class="container">
-            <h2>Register Now</h2>
-            <p>Don't miss out on this exciting opportunity to learn about AI in research!</p>
-            <a href="#" class="btn">Register</a>
-        </div>
+      <div class="container">
+        <h2>Register Now</h2>
+        <p>
+          Don't miss out on this exciting opportunity to learn about AI in
+          research!
+        </p>
+        <a href="#" class="btn">Register</a>
+      </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 AI For Research Conference. All rights reserved.</p>
+      <p>&copy; 2024 AI For Research Conference. All rights reserved.</p>
     </footer>
-</body>
+  </body>
 </html>
