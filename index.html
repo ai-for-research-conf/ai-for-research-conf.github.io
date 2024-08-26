@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI For Research Conference</title>
+    <style>
+      body {
+        font-family: "Futura", sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+        padding: 20px;
+      }
+      header {
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        color: white;
+        padding-top: 30px;
+        min-height: 70px;
+        border-bottom: #a777e3 3px solid;
+      }
+      header a {
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+      header ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        overflow: hidden;
+      }
+      header li {
+        float: left;
+        display: block;
+        padding: 0 20px 0 20px;
+      }
+      header #branding {
+        float: left;
+      }
+      header #branding h1 {
+        margin: 0;
+      }
+      header nav {
+        float: right;
+        margin-top: 10px;
+      }
+      header .highlight,
+      header .current a {
+        color: #e8491d;
+        font-weight: bold;
+      }
+      header a:hover {
+        color: #ffffff;
+        font-weight: bold;
+      }
+      .btn {
+        display: inline-block;
+        background: #e8491d;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+      .btn:hover {
+        background: #ff6a3c;
+      }
+      #showcase {
+        min-height: 400px;
+        background: url("header.webp") no-repeat center center/cover;
+        text-align: center;
+        color: #e8491d;
+      }
+      #showcase h1 {
+        margin-top: 100px;
+        font-size: 55px;
+        margin-bottom: 10px;
+      }
+      #showcase p {
+        font-size: 20px;
+      }
+      .speaker {
+        background: #f4f4f4;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
+      .speaker img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        float: left;
+        margin-right: 20px;
+      }
+      .claim {
+        cursor: pointer;
+        background: #e8491d;
+        color: #ffffff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
+      .claim .modal {
+        color: #e8491d;
+      }
+
+      /* Add these new styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+      }
+
+      .modal-content label {
+        display: inline-block;
+        width: 7rem;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      #thankYouMessage {
+        display: none;
+        text-align: center;
+        font-size: 18px;
+        color: #e8491d;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">AI</span> For Research</h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="current"><a href="#home">Home</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#claims">AI Power</a></li>
+            <li><a href="#register" class="btn">Register Now</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="home">
+      <div id="showcase">
+        <div class="container">
+          <h1>AI For Research Conference</h1>
+          <p>Join us on September 5th, 2024 at Tiger Team Ventures for a day of talks and workshops</p>
+          <a href="#register" class="btn">Register Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="speakers">
+      <div class="container">
+        <h2>Speaker Line-up</h2>
+        <div class="speaker">
+          <img src="images/profile4.jpeg" alt="" />
+          <h3>Dr. Gary Marlow</h3>
+          <p>AI Ethics Researcher</p>
+        </div>
+        <div class="speaker">
+          <img src="images/profile5.jpeg" alt="Josephine Smith" />
+          <h3>Josephine Smith</h3>
+          <p>Machine Learning Engineer</p>
+        </div>
+        <div class="speaker">
+          <img src="images/profile6.jpeg" alt="Emily Brown" />
+          <h3>Emily Brown</h3>
+          <p>Data Scientist</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="claims">
+      <div class="container">
+        <h2>The Power of AI</h2>
+        <div class="claim">
+          <div class="research">
+            <h3>Revolutionizing Research</h3>
+            <p>AI is transforming how we conduct research, enabling faster discoveries and deeper insights.</p>
+          </div>
+          <div id="revolutionizingResearchModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>AI's Impact on Research</h2>
+              <p>
+                Artificial Intelligence (AI) and Machine Learning (ML) are fundamentally changing the landscape of
+                research across various disciplines. These technologies are not just tools, but transformative forces
+                that are reshaping how we approach scientific inquiry.
+              </p>
+              <p>
+                AI algorithms can process and analyze vast amounts of data at unprecedented speeds, uncovering patterns
+                and insights that might take human researchers years to discover. This capability is particularly
+                valuable in fields like genomics, drug discovery, and climate science, where the volume of data is
+                overwhelming.
+              </p>
+              <p>
+                Moreover, AI is enhancing the accuracy and reproducibility of research. Machine learning models can
+                identify subtle correlations and minimize human bias, leading to more robust and reliable findings. As
+                AI continues to evolve, we can expect even more profound impacts on research methodologies, accelerating
+                the pace of scientific discovery and innovation.
+              </p>
+            </div>
+          </div>
+          <script>
+            document.querySelector(".claim .research").addEventListener("click", function () {
+              document.getElementById("revolutionizingResearchModal").style.display = "block";
+            });
+            document.querySelector("#revolutionizingResearchModal .close").addEventListener("click", function () {
+              console.log("clicked", document.getElementById("revolutionizingResearchModal"));
+              console.log("2", document.getElementById("revolutionizingResearchModal").style);
+              console.log("3", document.getElementById("revolutionizingResearchModal").style.display);
+              document.getElementById("revolutionizingResearchModal").style.display = "none";
+              console.log("4", document.getElementById("revolutionizingResearchModal").style.display);
+            });
+          </script>
+        </div>
+        <div class="claim">
+          <div class="productivity">
+            <h3>Enhancing Productivity</h3>
+            <p>
+              AI-powered tools are boosting researcher productivity, automating tedious tasks and freeing up time for
+              creative thinking.
+            </p>
+          </div>
+          <div id="enhancingProductivityModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>AI's Impact on Productivity</h2>
+              <p>
+                Artificial Intelligence (AI) and Machine Learning (ML) are revolutionizing productivity in research by
+                automating time-consuming tasks and providing powerful analytical tools.
+              </p>
+              <p>
+                These technologies can rapidly process and analyze vast datasets, perform literature reviews, and even
+                generate hypotheses, significantly reducing the time researchers spend on routine tasks.
+              </p>
+              <p>
+                By handling repetitive and data-intensive work, AI frees up researchers to focus on higher-level
+                thinking, creative problem-solving, and interpreting results, ultimately accelerating the pace of
+                scientific discovery.
+              </p>
+              <p>
+                As AI continues to evolve, we can expect even greater productivity gains, enabling researchers to tackle
+                more complex problems and push the boundaries of human knowledge further than ever before.
+              </p>
+            </div>
+          </div>
+          <script>
+            document.querySelector(".claim .productivity").addEventListener("click", function () {
+              document.getElementById("enhancingProductivityModal").style.display = "block";
+            });
+            document.querySelector("#enhancingProductivityModal .close").addEventListener("click", function () {
+              document.getElementById("enhancingProductivityModal").style.display = "none";
+            });
+          </script>
+        </div>
+        <div class="claim">
+          <div class="unlocking-possibilities">
+            <h3>Unlocking New Possibilities</h3>
+            <p>
+              AI is opening doors to research areas previously thought impossible, pushing the boundaries of human
+              knowledge.
+            </p>
+          </div>
+          <div id="unlockingPossibilitiesModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>AI's Impact on Research Possibilities</h2>
+              <p>
+                Large Language Models (LLMs) and other AI technologies are revolutionizing the landscape of research,
+                unlocking new possibilities that were once beyond our reach.
+              </p>
+              <p>These powerful tools are enabling researchers to:</p>
+              <ul>
+                <li>Process and analyze vast amounts of unstructured data, uncovering hidden patterns and insights</li>
+                <li>Generate novel hypotheses and research directions, sparking creativity in scientific inquiry</li>
+                <li>Break down language barriers, facilitating global collaboration and knowledge sharing</li>
+                <li>Simulate complex systems and scenarios, allowing for risk-free experimentation</li>
+                <li>Accelerate drug discovery and materials science through advanced modeling</li>
+              </ul>
+              <p>
+                As AI continues to evolve, we can expect even more groundbreaking applications in research, potentially
+                leading to paradigm shifts across various scientific disciplines.
+              </p>
+            </div>
+          </div>
+          <script>
+            document.querySelector(".claim .unlocking-possibilities").addEventListener("click", function () {
+              document.getElementById("unlockingPossibilitiesModal").style.display = "block";
+            });
+            document.querySelector("#unlockingPossibilitiesModal .close").addEventListener("click", function () {
+              document.getElementById("unlockingPossibilitiesModal").style.display = "none";
+            });
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <section id="register">
+      <div class="container">
+        <h2>Register Now</h2>
+        <p>Don't miss out on this exciting opportunity to learn about AI in research!</p>
+        <a href="#" class="btn" id="openModalBtn">Register</a>
+      </div>
+    </section>
+
+    <!-- Add this new modal section -->
+    <div id="registrationModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Event Registration</h2>
+        <form id="registrationForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required /><br /><br />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required /><br /><br />
+          <label for="affiliation">Affiliation:</label>
+          <input type="text" id="affiliation" name="affiliation" /><br /><br />
+          <input type="submit" value="Submit" class="btn" />
+        </form>
+        <div id="thankYouMessage">
+          <p>Thank you for registering! We look forward to seeing you at the conference.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 AI For Research Conference. All rights reserved.</p>
+    </footer>
+
+    <!-- Add this script section -->
+    <script>
+      const modal = document.getElementById("registrationModal");
+      const btn = document.getElementById("openModalBtn");
+      const span = document.getElementsByClassName("close")[0];
+      const form = document.getElementById("registrationForm");
+      const thankYouMessage = document.getElementById("thankYouMessage");
+
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
+
+      span.onclick = function () {
+        modal.style.display = "none";
+        form.style.display = "block";
+        thankYouMessage.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+          form.style.display = "block";
+          thankYouMessage.style.display = "none";
+        }
+      };
+
+      form.onsubmit = function (e) {
+        e.preventDefault();
+        form.style.display = "none";
+        thankYouMessage.style.display = "block";
+      };
+    </script>
+  </body>
+</html>
